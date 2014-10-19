@@ -1,12 +1,13 @@
 ﻿param (
     [string]$u = "",
-    [string]$p = ""
+    [string]$p = "",
+	[string]$port = ""
 
  )
  #Write-Output "user = $($u)"
  #Write-Output "pass = $($p)"
 
-$UTORRENT_URL = "http://localhost:63251/gui/"
+$UTORRENT_URL = "http://localhost:$($port)/gui/"
 $REGEX_UTORRENT_TOKEN = 
 @"
 <div[^>]*id=[\"\']token[\"\'][^>]*>([^<]*)</div>
