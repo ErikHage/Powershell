@@ -4,9 +4,20 @@
 	[string]$port = ""
 
  )
- #Write-Output "user = $($u)"
- #Write-Output "pass = $($p)"
 
+ <######################### Iniitial Setup #########################
+Step 1:
+uTorrent -> Options -> Preferences -> Advanced -> Web UI
+Enable Web UI
+create custom username/password
+
+Step 2:
+uTorrent -> Options -> Preferences -> Advanced -> Run Program
+Paste in second box:
+powershell -ExecutionPolicy ByPass -File [FULL\PATH\OF\SCRIPT] -p [PASSWORD] -u [USERNAME] -port [PORT_CONFIGURED_IN_UTORRENT]
+
+Note: Port number can be found in uTorrent -> Options -> Preferences -> Connection
+###################################################################>
 $UTORRENT_URL = "http://localhost:$($port)/gui/"
 $REGEX_UTORRENT_TOKEN = 
 @"
